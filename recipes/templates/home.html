@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello world</title>
+    
+    <style>
+      /* Resetando margens e preenchimentos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #6e7e8f, #2a3b4c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    border-radius: 12px;
+    padding: 40px 60px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.hello-world {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: -webkit-linear-gradient(45deg, #ff0080, #8000ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    position: relative;
+    animation: shine 3s linear infinite;
+}
+
+.hello-world::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 3px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    animation: glow 2s infinite;
+}
+
+/* Animações */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="hello-world">Hello, World!</h1>
+    </div>
+</body>
+</html>
